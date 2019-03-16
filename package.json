@@ -4,7 +4,9 @@
   "description": "Demo fullstack javascript with React, ExpressJS and MongoDB from scratch",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node server.js --ignore public/",
+    "start:https": "nodemon --exec babel-node https.server.js --ignore public/",
+    "start:http": "nodemon --exec babel-node http.server.js --ignore public/",
+    "start:express": "nodemon --exec babel-node express.server.js --ignore public/",
     "dev": "webpack -wd"
   },
   "repository": {
