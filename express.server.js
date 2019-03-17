@@ -4,10 +4,23 @@ import fs from 'fs';
 import apiRouter from './api/index';
 
 const server = express();
+/* set view to ejs */
+server.set('view engine', 'ejs');
 /* handle the home page */
 server.get('/', (req, res) => {
-  res.send("Hello Express");
+  res.send('Hello Express');
 });
+/* handle index.ejs file */
+server.get('/ejs', (req, res) => {
+  res.render('index', {
+    ejsTitle: 'Hello EJS',
+    ejsHeader: 'This is header',
+    ejsFooter: 'This is footer',
+    randomNumber: Math.random(),
+    todayDate: new Date(),
+  });
+});
+
 /* handle about page */
 /*server.get('/about', (req, res) => {
   res.send("This is about page");
